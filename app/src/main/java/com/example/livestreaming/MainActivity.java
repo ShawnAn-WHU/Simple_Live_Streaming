@@ -1,26 +1,26 @@
 package com.example.livestreaming;
 
 import android.annotation.SuppressLint;
-import android.net.Uri;
 import android.os.Bundle;
-import android.widget.ImageButton;
-import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
+
 import com.google.android.material.appbar.MaterialToolbar;
 
 public class MainActivity extends AppCompatActivity {
+    public static String PACKAGE_NAME;
     MaterialToolbar toolbar;
     VideoView videoView;
-    ImageButton thumbUp;
-    String videoUri;
 
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        PACKAGE_NAME = getApplicationContext().getPackageName();
         toolbar = findViewById(R.id.toolbar);
         videoView = findViewById(R.id.video_view);
         toolbar.setOnMenuItemClickListener(item -> {
@@ -39,15 +39,8 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
 
-        MediaController mediaController = new MediaController(this);
-        videoView.setMediaController(mediaController);
-        videoUri = "android.resource://" + getPackageName() + "/" + R.raw.vertical;
-        videoView.setVideoURI(Uri.parse(videoUri));
-        videoView.requestFocus();
-        videoView.start();
-
-        thumbUp = findViewById(R.id.thumb_up);
-        thumbUp.setOnClickListener(view ->
-                Toast.makeText(MainActivity.this, "Thumb Up", Toast.LENGTH_SHORT).show());
+        ViewPager2 viewPager2 = findViewById(R.id.viewPager);
+        ViewPagerAdapter adapter = new ViewPagerAdapter();
+        viewPager2.setAdapter(adapter);
     }
 }
