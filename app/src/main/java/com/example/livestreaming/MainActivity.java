@@ -4,10 +4,8 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Toast;
 import android.widget.VideoView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
-
 import com.google.android.material.appbar.MaterialToolbar;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         PACKAGE_NAME = getApplicationContext().getPackageName();
+
         toolbar = findViewById(R.id.toolbar);
         videoView = findViewById(R.id.video_view);
         toolbar.setOnMenuItemClickListener(item -> {
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ViewPager2 viewPager2 = findViewById(R.id.viewPager);
+        viewPager2.setOrientation(ViewPager2.ORIENTATION_VERTICAL);
         ViewPagerAdapter adapter = new ViewPagerAdapter();
         viewPager2.setAdapter(adapter);
     }
