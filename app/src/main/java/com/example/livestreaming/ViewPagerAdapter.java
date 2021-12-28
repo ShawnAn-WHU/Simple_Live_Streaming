@@ -13,14 +13,10 @@ import java.util.List;
 public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.ViewHolder>{
     private final List<String> uri = new ArrayList<>();
     public ViewPagerAdapter(){
-        uri.add("android.resource://" + MainActivity.PACKAGE_NAME + "/" + R.raw.vertical);
-        uri.add("android.resource://" + MainActivity.PACKAGE_NAME + "/" + R.raw.horizontal);
-        uri.add("android.resource://" + MainActivity.PACKAGE_NAME + "/" + R.raw.vertical);
-        uri.add("android.resource://" + MainActivity.PACKAGE_NAME + "/" + R.raw.horizontal);
-        uri.add("android.resource://" + MainActivity.PACKAGE_NAME + "/" + R.raw.vertical);
-        uri.add("android.resource://" + MainActivity.PACKAGE_NAME + "/" + R.raw.horizontal);
-        uri.add("android.resource://" + MainActivity.PACKAGE_NAME + "/" + R.raw.vertical);
-        uri.add("android.resource://" + MainActivity.PACKAGE_NAME + "/" + R.raw.horizontal);
+        uri.add("android.resource://" + MainActivity.PACKAGE_NAME + "/" + R.raw.vertical_1);
+        uri.add("android.resource://" + MainActivity.PACKAGE_NAME + "/" + R.raw.horizontal_1);
+        uri.add("android.resource://" + MainActivity.PACKAGE_NAME + "/" + R.raw.vertical_2);
+        uri.add("android.resource://" + MainActivity.PACKAGE_NAME + "/" + R.raw.horizontal_2);
     }
     @NonNull
     @Override
