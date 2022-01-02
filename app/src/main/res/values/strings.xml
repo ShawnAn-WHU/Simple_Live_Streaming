@@ -9,4 +9,6 @@
     <!-- 交互 -->
     <string name="thumb_up">点赞</string>
     <string name="comment">评论</string>
+    <string name="thumb_button">点赞按钮</string>
+    <string name="comment_button">评论按钮</string>
 </resources>

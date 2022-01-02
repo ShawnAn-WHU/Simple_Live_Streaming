@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.VideoView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +31,19 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
         holder.videoView.setVideoURI(Uri.parse(uri.get(position)));
         holder.videoView.requestFocus();
         holder.videoView.start();
+        holder.thumbUp.setOnClickListener(view -> {
+            switch (ThumbView.thumbStyle){
+                case 0:
+                    holder.thumbUp.setImageResource(R.drawable.thumb_anim);
+                    ThumbView.thumbStyle = 1;
+                    break;
+                case 1:
+                    holder.thumbUp.setImageResource(R.drawable.thumb);
+                    ThumbView.thumbStyle = 0;
+                    break;
+                default:
+            }
+        });
     }
 
     @Override
@@ -39,9 +53,13 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         VideoView videoView;
+        ImageButton thumbUp;
+        ImageButton Comment;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             videoView = itemView.findViewById(R.id.video_view);
+            thumbUp = itemView.findViewById(R.id.thumb_up);
+            Comment = itemView.findViewById(R.id.comment);
         }
     }
 }

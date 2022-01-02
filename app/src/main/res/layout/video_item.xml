@@ -10,6 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true" />
+    <com.example.livestreaming.ThumbView
+        android:id="@+id/thumb_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
     <LinearLayout
         android:id="@+id/thumb_layout"
         android:layout_width="wrap_content"
@@ -25,7 +29,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/thumb"
-            android:background="@color/transparent" />
+            android:background="@color/transparent"
+            android:contentDescription="@string/thumb_button" />
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/thumb_up_text"
             android:layout_width="wrap_content"
@@ -49,7 +54,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/comment"
-            android:background="@color/transparent" />
+            android:background="@color/transparent"
+            android:contentDescription="@string/comment_button" />
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/comment_text"
             android:layout_width="wrap_content"
