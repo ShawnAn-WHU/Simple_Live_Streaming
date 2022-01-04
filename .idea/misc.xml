@@ -5,9 +5,11 @@
       <map>
         <entry key="..\:/Android/LiveStreaming/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.265625" />
         <entry key="..\:/Android/LiveStreaming/app/src/main/res/drawable/comment.xml" value="0.265625" />
+        <entry key="..\:/Android/LiveStreaming/app/src/main/res/drawable/food.xml" value="0.265625" />
         <entry key="..\:/Android/LiveStreaming/app/src/main/res/drawable/gift.xml" value="0.265625" />
         <entry key="..\:/Android/LiveStreaming/app/src/main/res/drawable/ic_launcher_background.xml" value="0.265625" />
         <entry key="..\:/Android/LiveStreaming/app/src/main/res/drawable/send.xml" value="0.265625" />
+        <entry key="..\:/Android/LiveStreaming/app/src/main/res/drawable/star.xml" value="0.265625" />
         <entry key="..\:/Android/LiveStreaming/app/src/main/res/drawable/thumb.xml" value="0.265625" />
         <entry key="..\:/Android/LiveStreaming/app/src/main/res/drawable/thumb_anim.xml" value="0.265625" />
         <entry key="..\:/Android/LiveStreaming/app/src/main/res/font/open_sans.xml" value="0.2796875" />
