@@ -8,7 +8,9 @@
     <string name="toolbar_title">直播</string>
     <!-- 交互 -->
     <string name="thumb_up">点赞</string>
-    <string name="comment">评论</string>
+    <string name="gift">礼物</string>
     <string name="thumb_button">点赞按钮</string>
-    <string name="comment_button">评论按钮</string>
+    <string name="gift_button">礼物按钮</string>
+    <string name="text_hint">发个弹幕吧~</string>
+    <string name="send">发送弹幕</string>
 </resources>
