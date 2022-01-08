@@ -13,4 +13,8 @@
     <string name="gift_button">礼物按钮</string>
     <string name="text_hint">发个弹幕吧~</string>
     <string name="send">发送弹幕</string>
+    <string name="gift_1_image">礼物1</string>
+    <string name="gift_2_image">礼物2</string>
+    <string name="show_gift">展示礼物</string>
+    <string name="gift_num">礼物个数</string>
 </resources>

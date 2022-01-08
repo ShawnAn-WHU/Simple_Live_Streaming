@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:layout_height="200dp"
+    android:orientation="vertical">
+    <!--礼物1-->
+    <LinearLayout
+        android:id="@+id/gift_1_layout"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageButton
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="2dp"
+            android:id="@+id/gift_1_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:contentDescription="@string/gift_1_image" />
+        <TextView
+            android:id="@+id/gift_1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+    <!--礼物2-->
+    <LinearLayout
+        android:id="@+id/gift_2_layout"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageButton
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="2dp"
+            android:id="@+id/gift_2_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:contentDescription="@string/gift_2_image" />
+        <TextView
+            android:id="@+id/gift_2_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,15 +1,21 @@
 package com.example.livestreaming;
 
 import android.net.Uri;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.VideoView;
+
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.material.textfield.TextInputEditText;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +55,25 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
                 default:
             }
         });
+        holder.gift.setOnClickListener(view -> {
+            View popupView = LayoutInflater.from(view.getContext())
+                    .inflate(R.layout.gift_popup, null, false);
+            PopupWindow popupWindow = new PopupWindow(popupView,
+                                                      ViewGroup.LayoutParams.MATCH_PARENT,
+                                                      ViewGroup.LayoutParams.MATCH_PARENT);
+            RecyclerView recyclerView = popupView.findViewById(R.id.gift_recycler);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(popupView.getContext());
+            linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+            recyclerView.setLayoutManager(linearLayoutManager);
+            GiftAdapter giftAdapter = new GiftAdapter(initGifts());
+            recyclerView.setAdapter(giftAdapter);
+            popupWindow.setOutsideTouchable(true);
+            popupWindow.setFocusable(true);
+            popupWindow.setTouchable(true);
+            View rootView = LayoutInflater.from(view.getContext())
+                    .inflate(R.layout.video_item, null);
+            popupWindow.showAtLocation(rootView, Gravity.BOTTOM, 0, 0);
+        });
         commentListView = holder.commentListView;
         commentListView.setDivider(null);
         List<Comment> commentList;
@@ -75,6 +100,7 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
             String commentText = holder.commentText.getText().toString();
             if(!commentText.equals("")) {
                 commentList.add(new Comment(commentText));
+                commentAdapter.notifyDataSetChanged();
                 holder.commentText.setText("");
                 holder.commentText.clearFocus();
             }
@@ -150,6 +176,34 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
             hor_2.add(comment3);
         }
         return hor_2;
+    }
+    public List<List<Gift>> initGifts(){
+        List<List<Gift>> giftsList = new ArrayList<>();
+        List<Gift> giftList_1 = new ArrayList<>();
+        List<Gift> giftList_2 = new ArrayList<>();
+        List<Gift> giftList_3 = new ArrayList<>();
+        List<Gift> giftList_4 = new ArrayList<>();
+        Gift gift = new Gift("蛋糕", R.drawable.cake);
+        giftList_1.add(gift);
+        gift = new Gift("电话", R.drawable.call);
+        giftList_1.add(gift);
+        giftsList.add(giftList_1);
+        gift = new Gift("加餐", R.drawable.food);
+        giftList_2.add(gift);
+        gift = new Gift("音乐", R.drawable.music);
+        giftList_2.add(gift);
+        giftsList.add(giftList_2);
+        gift = new Gift("飞机", R.drawable.plane);
+        giftList_3.add(gift);
+        gift = new Gift("星星", R.drawable.star);
+        giftList_3.add(gift);
+        giftsList.add(giftList_3);
+        gift = new Gift("太阳", R.drawable.sun);
+        giftList_4.add(gift);
+        gift = new Gift("充电", R.drawable.battery);
+        giftList_4.add(gift);
+        giftsList.add(giftList_4);
+        return giftsList;
     }
 }
 

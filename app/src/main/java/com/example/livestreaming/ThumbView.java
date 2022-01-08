@@ -85,4 +85,28 @@ public class ThumbView extends RelativeLayout {
         });
         imageView.startAnimation(animationSet);
     }
+    public void playGiftAnim(final ImageView imageView) {
+        AnimationSet animationSet = new AnimationSet(true);
+        int degree = 0;
+        animationSet.addAnimation(Animator.rotateAnim(0, 0, degree));
+        animationSet.addAnimation(Animator.scaleAnim(100, 2f, 1f, 0));
+        animationSet.addAnimation(Animator.alphaAnim(0, 1, 100, 0));
+        animationSet.addAnimation(Animator.scaleAnim(500, 1f, 1.3f, 300));
+        animationSet.addAnimation(Animator.alphaAnim(1f, 0, 500, 300));
+        animationSet.addAnimation(Animator.translationAnim(500, 0, 0, 0, -400, 300));
+        animationSet.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                new Handler().post(() -> removeView(imageView));
+            }
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
+        imageView.startAnimation(animationSet);
+    }
 }
