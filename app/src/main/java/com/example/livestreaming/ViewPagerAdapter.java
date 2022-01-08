@@ -1,10 +1,12 @@
 package com.example.livestreaming;
 
+import android.content.Context;
 import android.net.Uri;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupWindow;
@@ -103,6 +105,9 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
                 commentAdapter.notifyDataSetChanged();
                 holder.commentText.setText("");
                 holder.commentText.clearFocus();
+                InputMethodManager inputMethodManager = (InputMethodManager) view.getContext()
+                        .getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
             }
         });
     }
